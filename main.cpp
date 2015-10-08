@@ -66,12 +66,12 @@ int main (void)
    for (i = 0; i < MAX; i++)
    {
 
-      cout<<bin[i];
-
       if(bin[i] != 1 && bin[i] != 0)
       {
          break;
       }
+
+      cout<<bin[i]; 
 
    } 
 

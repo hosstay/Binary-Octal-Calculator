@@ -39,18 +39,13 @@ int main (void)
    //convert to binary
    //do the first iteration outside to pull from input
    temp = num / 2;
-   cout<<"temp: "<<temp<<endl;
    bin[0] = num % 2;
-   cout<<"bin[0]: "<<bin[0]<<endl; 
    
    //do the rest
    for(i = 1; i < MAX; i++)
    {
-      cout<<i<<endl;
-      bin[i] = temp % 2;
-      cout<<"bin["<<i<<"]: "<<bin[i]<<endl;   
+      bin[i] = temp % 2;  
       temp = temp / 2;
-      cout<<"temp: "<<temp<<endl;
 
       //if whole number reaches 0 quit for loop
       if(temp == 0)

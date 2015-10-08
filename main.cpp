@@ -54,7 +54,7 @@ int main (void)
       //if whole number reaches 0 quit for loop
       if(temp == 0)
       {
-         i = MAX;
+         break;
       }     
      
    }
@@ -65,9 +65,14 @@ int main (void)
 
    for (i = 0; i < MAX; i++)
    {
-      if(bin[i] != 1 || bin[i] != 0)
-         i = MAX;
+
       cout<<bin[i];
+
+      if(bin[i] != 1 && bin[i] != 0)
+      {
+         break;
+      }
+
    } 
 
    cout<<".";

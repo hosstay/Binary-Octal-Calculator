@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <cassert>
+#include <stack>
 using namespace std;
 
 int main (void)
@@ -21,12 +22,14 @@ int main (void)
    const int MAX = 50;
    int num = -1;
    int temp = 0;
-   int bin[MAX] = {0};
-   int oct[MAX] = {0};
    bool flag = true;
    int i = 0;
    int count = 0;
 
+   stack<int> bin;
+   stack<int> oct;
+
+   //get input from user
    while(flag)
    {
       cout<<"What decimal number would you like converted to binary & octal?\n";
@@ -47,20 +50,14 @@ int main (void)
 
    //do the first iteration outside to pull from input
    temp = num / 2;
-   bin[0] = num % 2;
+   bin.push(num % 2);
    
    //do the rest
-   for(i = 1; i < MAX; i++)
+   while(temp != 0)
    {
-      bin[i] = temp % 2; 
-      temp = temp / 2;
-
-      //if whole number reaches 0 quit for loop
-      if(temp == 0)
-      {
-         count = i;
-         break;
-      }     
+      count++;
+      bin.push(temp % 2); 
+      temp = temp / 2;   
      
    }
 
@@ -68,9 +65,10 @@ int main (void)
    //garbage values)
    cout<<num<<" in binary is ";
 
-   for (i = count; i >= 0; i--)
+   while(!bin.empty())
    {
-      cout<<bin[i]; 
+      cout<<bin.top();
+      bin.pop(); 
 
    } 
 
@@ -84,20 +82,14 @@ int main (void)
 
    //do the first iteration outside to pull from input
    temp = num / 8;
-   oct[0] = num % 8;
+   oct.push(num % 8);
    
    //do the rest
-   for(i = 1; i < MAX; i++)
+   while(temp != 0)
    {
-      oct[i] = temp % 8;
-      temp = temp / 8;
-
-      //if whole number reaches 0 quit for loop
-      if(temp == 0)
-      {
-         count = i;
-         break;
-      }     
+      count++;
+      oct.push(temp % 8); 
+      temp = temp / 8;   
      
    }
 
@@ -105,9 +97,10 @@ int main (void)
    //garbage values)
    cout<<num<<" in octal is ";
 
-   for (i = count; i >= 0; i--)
+   while(!oct.empty())
    {
-      cout<<oct[i]; 
+      cout<<oct.top();
+      oct.pop(); 
 
    } 
 

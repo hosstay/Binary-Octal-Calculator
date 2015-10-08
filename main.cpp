@@ -18,14 +18,13 @@ using namespace std;
 
 int main (void)
 {
-  
-   const int MAX = 50;
+   //initial variable declarations
    int num = -1;
    int temp = 0;
    bool flag = true;
-   int i = 0;
    int count = 0;
 
+   //creating stacks
    stack<int> bin;
    stack<int> oct;
 
@@ -35,6 +34,7 @@ int main (void)
       cout<<"What decimal number would you like converted to binary & octal?\n";
       cin>>num;
 
+      //terminate program if -1
       assert(num != -1);   
 
       if(num >= 0)
@@ -52,7 +52,7 @@ int main (void)
    temp = num / 2;
    bin.push(num % 2);
    
-   //do the rest
+   //finish the rest of the iterations
    while(temp != 0)
    {
       count++;
@@ -61,8 +61,7 @@ int main (void)
      
    }
 
-   //print all values of bin array as long as they are 0 or 1 (no
-   //garbage values)
+   //print all values of bin stack until empty
    cout<<num<<" in binary is ";
 
    while(!bin.empty())
@@ -84,7 +83,7 @@ int main (void)
    temp = num / 8;
    oct.push(num % 8);
    
-   //do the rest
+   //finish the rest of the iterations
    while(temp != 0)
    {
       count++;
@@ -93,8 +92,7 @@ int main (void)
      
    }
 
-   //print all values of bin array as long as they are 0 or 1 (no
-   //garbage values)
+   //print all values of oct stack until empty
    cout<<num<<" in octal is ";
 
    while(!oct.empty())

@@ -20,10 +20,11 @@ int main (void)
    const int MAX = 50;
    int num = -1;
    int temp = 0;
-   int bin[MAX];
-   int oct[MAX];
+   int bin[MAX] = {0};
+   int oct[MAX] = {0};
    bool flag = true;
    int i = 0;
+   int count = 0;
 
    while(flag)
    {
@@ -54,6 +55,7 @@ int main (void)
       //if whole number reaches 0 quit for loop
       if(temp == 0)
       {
+         count = i;
          break;
       }     
      
@@ -63,7 +65,7 @@ int main (void)
    //garbage values)
    cout<<num<<" in binary is ";
 
-   for (i = 0; i < MAX; i++)
+   for (i = 0; i <= count; i++)
    {
 
       if(bin[i] != 1 && bin[i] != 0)

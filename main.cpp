@@ -47,7 +47,7 @@ int main (void)
    //do the rest
    for(i = 1; i < MAX; i++)
    {
-      bin[i] = temp % 2;  
+      bin[i] = temp % 2; 
       temp = temp / 2;
 
       //if whole number reaches 0 quit for loop
@@ -61,21 +61,15 @@ int main (void)
 
    //print all values of bin array as long as they are 0 or 1 (no
    //garbage values)
-   cout<<num<<" in binary is "<<endl;
+   cout<<num<<" in binary is ";
 
-   for (i = 0; i <= count; i++)
+   for (i = count; i > 0; i--)
    {
-
-      if(bin[i] != 1 && bin[i] != 0)
-      {
-         break;
-      }
-
       cout<<bin[i]; 
 
    } 
 
-   cout<<".";
+   cout<<"."<<endl;
 
    /*
    * convert to octal
@@ -85,17 +79,13 @@ int main (void)
 
    //do the first iteration outside to pull from input
    temp = num / 8;
-   cout<<"temp: "<<temp<<endl;
    oct[0] = num % 8;
-   cout<<"oct[0]: "<<oct[0]<<endl;
    
    //do the rest
    for(i = 1; i < MAX; i++)
    {
       oct[i] = temp % 8;
-      cout<<"oct["<<i<<"]: "<<oct[i]<<endl;  
       temp = temp / 8;
-      cout<<"temp: "<<temp<<endl;
 
       //if whole number reaches 0 quit for loop
       if(temp == 0)
@@ -108,19 +98,13 @@ int main (void)
 
    //print all values of bin array as long as they are 0 or 1 (no
    //garbage values)
-   cout<<num<<" in octal is "<<endl;
+   cout<<num<<" in octal is ";
 
-   for (i = 0; i <= count; i++)
+   for (i = count; i >= 0; i--)
    {
-
-      if(oct[i] != 1 && oct[i] != 0)
-      {
-         break;
-      }
-
       cout<<oct[i]; 
 
    } 
 
-   cout<<".";
+   cout<<"."<<endl;
 }

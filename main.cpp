@@ -12,6 +12,7 @@
 
 
 #include <iostream>
+#include <cassert>
 using namespace std;
 
 int main (void)
@@ -31,8 +32,12 @@ int main (void)
       cout<<"What decimal number would you like converted to binary & octal?\n";
       cin>>num;
 
+      assert(num != -1);   
+
       if(num >= 0)
          flag = false;
+      else
+         cout<<"Error in input."<<endl;
       
    }
 
@@ -63,7 +68,7 @@ int main (void)
    //garbage values)
    cout<<num<<" in binary is ";
 
-   for (i = count; i > 0; i--)
+   for (i = count; i >= 0; i--)
    {
       cout<<bin[i]; 
 
